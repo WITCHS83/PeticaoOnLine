@@ -1,0 +1,108 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Petição on line</title>
+        <meta charset="utf-8" />
+        <meta name = "viewport" content = "width=device-width, maximum-scale = 1, minimum-scale=1" />
+        <link rel="stylesheet" type="text/css" href="css/default.css" media="all" />
+        <link rel="stylesheet" href="css/flexslider.css" type="text/css" />
+        <link rel="stylesheet" href="css/fixed-navigation.css" type="text/css" />
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css' />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="js/jquery.flexslider.js"></script>
+        <script src="js/default.js"></script>
+
+
+        <script type="text/javascript">
+            function validaCorreto() {
+                var Ret = true;
+                var Msg = "Os seguintes campos devem ser preenchidos!:";
+
+                if (document.formulario.PrimeiroNome.value.length == 0) {
+                    Msg = Msg + "\n * Campo Primeiro nome deve ser preenchido!";
+                    Ret = false;
+                }
+                if (document.formulario.SegundoNome.value.length == 0) {
+                    Msg = Msg + "\n * Campo Ultimo nome deve ser preenchido!";
+                    Ret = false;
+                }
+                if (document.formulario.Endereco.value.length == 0) {
+                    Msg = Msg + "\n * Campo Endereço deve ser preenchido!";
+                    Ret = false;
+                }
+                if (document.formulario.EndNum.value.length == 0) {
+                    Msg = Msg + "\n * Campo Numero deve ser preenchido!";
+                    Ret = false;
+                }
+                if (document.formulario.Cidade.value.length == 0) {
+                    Msg = Msg + "\n * Campo Cidade deve ser preenchido!";
+                    Ret = false;
+                }
+                if (document.formulario.UF.value.length == 0) {
+                    Msg = Msg + "\n * Campo UF deve ser preenchido!";
+                    Ret = false;
+                }
+                if (document.formulario.Email.value == "" || document.formulario.Email.value.indexOf("@") == -1) {
+                    Msg = Msg + "\n * Preencha campo Email corretamente!";
+                    Ret = false;
+                }
+                if (Ret == false) {
+                    window.alert(Msg);
+                }
+                return Ret;
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <section id="Cadastro" class="row grey" >
+            <div class="center">
+                <u><h1>Faça seu cadastro e compartilhe essa página.</h1></u>
+                <div class="columns">
+                    <div class="half">
+                        <form action="CadastroServlet" method="POST" class="form" name="formulario" onsubmit="return validaCorreto();">
+                            <fieldset>
+                                <h2>Por favor insira seu cadastro:</h2>
+                                <div class="formRow" >
+                                    <div class="textField"><input type="text" name="PrimeiroNome" placeholder="Primeiro nome ..." /></div>
+                                    <div class="formRow">
+                                        <div class="textField"><input type="text" name="SegundoNome" placeholder="Ultimo nome ..." /></div>
+                                        <div class="formRow">
+                                            <div class="textField"><input type="text" name="Endereco" placeholder="Endereço ..."></div>
+                                            <div class="formRow">
+                                                <div class="textField"><input type="text" name="EndNum" placeholder="Numero ..."></div>
+                                                <div class="formRow">
+                                                    <div class="textField"><input type="text" name="Cidade" placeholder="Cidade ..."></div>
+                                                    <div class="formRow">
+                                                        <div class="textField"><input type="text" name="UF" maxlength="2" size="2" placeholder="Estado ..."></div>
+                                                        <div class="formRow">
+                                                            <div class="textField"><input type="text" name="Email" placeholder="Email ..."></div></br>
+
+                                                            <div class="formRow">
+                                                                <button class="btnSmall btn submit left" type="reset">
+                                                                    <span>Limpar cadastro</span>
+                                                                </button>
+                                                                <button class="btnSmall btn submit right" type="submit">
+                                                                    <span>Enviar cadastro</span>
+                                                                </button>
+
+                                                            </div> 
+
+                                                            </fieldset>
+
+                                                            </form>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                </section>
+                                        </body>
+                                        </html>
